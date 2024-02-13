@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+       app()->bind('App\Services\AwsService', function() {
+            return new \App\Services\AwsService();
+        });
     }
 
     /**

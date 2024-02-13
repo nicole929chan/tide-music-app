@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Services\AwsService;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(AwsService $awsService)
     {
-        return view('welcome');
+        $bucketList = $awsService->getBucketList();
+        dd($bucketList);
     }
 }
