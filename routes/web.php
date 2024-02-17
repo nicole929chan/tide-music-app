@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BucketController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', function() {
+    return view('welcome');
+});
+Route::resource('buckets', BucketController::class);
